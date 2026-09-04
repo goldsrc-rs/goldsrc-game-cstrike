@@ -27,9 +27,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 
 [[package]]
+name = "goldsrc"
+version = "0.16.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-rs.git?branch=dev#954187de3ee1b713bfed0d60912d09358f11e7d9"
+dependencies = [
+ "goldsrc-api",
+ "goldsrc-macros",
+ "log",
+ "serde",
+ "serde_json",
+ "toml",
+]
+
+[[package]]
 name = "goldsrc-api"
 version = "0.16.0"
-source = "git+https://github.com/goldsrc-rs/goldsrc-rs.git?branch=dev#790757996f01a0e823a04883f354cc21464f584a"
+source = "git+https://github.com/goldsrc-rs/goldsrc-rs.git?branch=dev#954187de3ee1b713bfed0d60912d09358f11e7d9"
 dependencies = [
  "serde",
  "toml",
@@ -41,6 +54,17 @@ name = "goldsrc-game-cstrike"
 version = "0.16.0"
 dependencies = [
  "goldsrc-api",
+]
+
+[[package]]
+name = "goldsrc-macros"
+version = "0.16.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-rs.git?branch=dev#954187de3ee1b713bfed0d60912d09358f11e7d9"
+dependencies = [
+ "goldsrc-api",
+ "proc-macro2",
+ "quote",
+ "syn 3.0.4",
 ]
 
 [[package]]
@@ -263,6 +287,14 @@ name = "unicode-ident"
 version = "1.0.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
+
+[[package]]
+name = "vip_menu"
+version = "0.16.0"
+dependencies = [
+ "goldsrc",
+ "goldsrc-game-cstrike",
+]
 
 [[package]]
 name = "wasm-encoder"

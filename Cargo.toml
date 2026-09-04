@@ -11,6 +11,13 @@ readme = "README.md"
 keywords = ["goldsrc", "counter-strike", "cstrike", "hlsdk", "regamedll"]
 categories = ["game-development", "api-bindings"]
 
+[workspace]
+members = [
+    ".",
+    "examples/demo_plugins/vip_menu",
+]
+resolver = "3"
+
 [dependencies]
 goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
 

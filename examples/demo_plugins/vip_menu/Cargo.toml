@@ -1,0 +1,15 @@
+[package]
+name = "vip_menu"
+version = "0.16.0"
+edition = "2024"
+authors = ["GoldSrc.rs Team"]
+license = "MIT OR Apache-2.0"
+description = "Interactive Counter-Strike 1.6 VIP weapon and equipment menu"
+
+[lib]
+crate-type = ["cdylib"]
+doctest = false
+
+[dependencies]
+goldsrc = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev" }
+goldsrc-game-cstrike = { path = "../../.." }
