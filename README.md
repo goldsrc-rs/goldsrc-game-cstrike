@@ -25,15 +25,30 @@ goldsrc-game-cstrike = { git = "https://github.com/goldsrc-rs/goldsrc-game-cstri
 ### Example
 
 ```rust
-use goldsrc_game_cstrike::{CsPlayerExt, CsWeapon, WeaponSlot};
 use goldsrc::prelude::*;
+use goldsrc_game_cstrike::{CsPlayerExt, CsWeapon};
 
-pub fn equip_vip(player: &Player) {
-    player.give_weapon(CsWeapon::Deagle);
-    player.give_weapon(CsWeapon::M4a1);
-    
-    if player.has_defuse_kit() {
-        println!("Player already has defuse kit");
+pub struct CsVipPlugin;
+
+#[plugin]
+impl CsVipPlugin {
+    /// Gives VIP weapon equipment to a living player.
+    #[command(
+        name = "vip_kit",
+        description = "Equips VIP starter pack (Deagle + M4A1)",
+        capability = "vip.kit"
+    )]
+    fn handle_vip_kit(player: Alive<Player>) {
+        player.give_weapon(CsWeapon::Deagle);
+        player.give_weapon(CsWeapon::M4a1);
+
+        if player.has_defuse_kit() {
+            player.print_chat("^4[VIP]^1 You already have a defuse kit.");
+        } else {
+            player.print_chat("^4[VIP]^1 Received Deagle and M4A1!");
+        }
+
+        log_info!("[VIP Kit] Successfully equipped player #{}", player.index());
     }
 }
 ```
@@ -42,7 +57,7 @@ pub fn equip_vip(player: &Player) {
 
 Licensed under either of:
 
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
 
 at your option.

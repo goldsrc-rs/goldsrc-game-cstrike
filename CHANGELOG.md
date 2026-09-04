@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.16.0] - 2026-09-04
 
 ### Added
+
 - Strongly-typed `CsTeam` enumeration with conversions to/from `goldsrc_api::client::Team` and raw integer IDs.
 - Full CS 1.6 weapon enumeration `CsWeapon` covering all CS 1.6 weapons, slots, and canonical classnames.
 - `CsPlayerExt` trait providing CS-specific operations on `Player` handles (`cs_team`, `give_weapon`, `has_defuse_kit`, `cs_team_str`).
