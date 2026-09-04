@@ -1,11 +1,14 @@
 //! Counter-Strike 1.6 player extension traits, money, armor, and inventory operations.
 
+use crate::team::CsTeam;
 use crate::weapons::CsWeapon;
 use goldsrc_api::Player;
-use goldsrc_api::client::Team;
 
 /// Helper extension trait providing Counter-Strike specific operations on [`Player`].
 pub trait CsPlayerExt {
+    /// Returns the player's CS team.
+    fn cs_team(&self) -> CsTeam;
+
     /// Returns whether the player has a defuse kit equipped.
     fn has_defuse_kit(&self) -> bool;
 
@@ -17,6 +20,10 @@ pub trait CsPlayerExt {
 }
 
 impl CsPlayerExt for Player {
+    fn cs_team(&self) -> CsTeam {
+        CsTeam::from_raw(self.team().raw())
+    }
+
     fn has_defuse_kit(&self) -> bool {
         false
     }
@@ -31,11 +38,6 @@ impl CsPlayerExt for Player {
     }
 
     fn cs_team_str(&self) -> &'static str {
-        match self.team() {
-            Team::Terrorist => "TERRORIST",
-            Team::CounterTerrorist => "CT",
-            Team::Spectator => "SPECTATOR",
-            Team::Unassigned => "UNASSIGNED",
-        }
+        self.cs_team().as_str()
     }
 }
