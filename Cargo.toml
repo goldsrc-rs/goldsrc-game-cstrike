@@ -13,8 +13,6 @@ categories = ["game-development", "api-bindings"]
 
 [dependencies]
 goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
-goldsrc-core = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
-goldsrc-sys = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
 
 [dev-dependencies]
-goldsrc = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }

@@ -2,10 +2,12 @@
 
 pub mod player;
 pub mod rules;
+pub mod team;
 pub mod weapons;
 
 pub use player::CsPlayerExt;
 pub use rules::{RoundEndReason, RoundState};
+pub use team::CsTeam;
 pub use weapons::{CsWeapon, WeaponSlot};
 
 #[cfg(test)]
