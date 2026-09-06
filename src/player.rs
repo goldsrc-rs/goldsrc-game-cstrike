@@ -2,7 +2,7 @@
 
 use crate::team::CsTeam;
 use crate::weapons::CsWeapon;
-use goldsrc_api::Player;
+use goldsrc_api::{Player, PlayerExt};
 
 /// Helper extension trait providing Counter-Strike specific operations on [`Player`].
 pub trait CsPlayerExt {
@@ -39,5 +39,49 @@ impl CsPlayerExt for Player {
 
     fn cs_team_str(&self) -> &'static str {
         self.cs_team().as_str()
+    }
+}
+
+impl<T: CsPlayerExt> CsPlayerExt for goldsrc_api::Alive<T> {
+    #[inline(always)]
+    fn cs_team(&self) -> CsTeam {
+        self.0.cs_team()
+    }
+
+    #[inline(always)]
+    fn has_defuse_kit(&self) -> bool {
+        self.0.has_defuse_kit()
+    }
+
+    #[inline(always)]
+    fn give_weapon(&self, weapon: CsWeapon) -> Option<i32> {
+        self.0.give_weapon(weapon)
+    }
+
+    #[inline(always)]
+    fn cs_team_str(&self) -> &'static str {
+        self.0.cs_team_str()
+    }
+}
+
+impl<T: CsPlayerExt> CsPlayerExt for &mut T {
+    #[inline(always)]
+    fn cs_team(&self) -> CsTeam {
+        (**self).cs_team()
+    }
+
+    #[inline(always)]
+    fn has_defuse_kit(&self) -> bool {
+        (**self).has_defuse_kit()
+    }
+
+    #[inline(always)]
+    fn give_weapon(&self, weapon: CsWeapon) -> Option<i32> {
+        (**self).give_weapon(weapon)
+    }
+
+    #[inline(always)]
+    fn cs_team_str(&self) -> &'static str {
+        (**self).cs_team_str()
     }
 }

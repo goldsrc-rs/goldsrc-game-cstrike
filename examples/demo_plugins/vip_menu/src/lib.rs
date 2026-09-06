@@ -48,7 +48,7 @@ impl VipMenu {
             .item(("AK-47 Kalashnikov + Deagle", 2))
             .item(
                 MenuItem::new("AWP Sniper Rifle + Deagle", 3)
-                    .require(Condition::Capability("vip.gold".into()))
+                    .requires(Condition::Capability("vip.gold".into()))
                     .on_deny_replace("\\d[AWP Sniper - Нужен VIP Gold]"),
             )
             .spacer()
@@ -96,6 +96,7 @@ impl VipMenu {
 
     #[menu_action(id = 4)]
     fn on_select_armor(player: &mut Player) {
+        player.give_item("item_assaultsuit");
         player.set_armorvalue(100.0);
         player.print_center("[VIP] Броня пополнена: 100 AP + Шлем");
         player.print_color("^4[VIP]^1 Вам выдана броня: ^3100 AP");

@@ -19,7 +19,14 @@ members = [
 resolver = "3"
 
 [dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.17.0" }
 
 [dev-dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.17.0" }
+
+[patch."https://github.com/goldsrc-rs/goldsrc-rs.git"]
+goldsrc = { path = "../goldsrc-rs/framework/goldsrc" }
+goldsrc-api = { path = "../goldsrc-rs/core/goldsrc-api" }
+goldsrc-macros = { path = "../goldsrc-rs/framework/goldsrc-macros" }
+goldsrc-sys = { path = "../goldsrc-rs/core/goldsrc-sys" }
+
