@@ -1,6 +1,6 @@
 [package]
 name = "goldsrc-game-cstrike"
-version = "0.16.0"
+version = "0.20.0"
 edition = "2024"
 authors = ["GoldSrc.rs Team"]
 description = "Counter-Strike 1.6 game domain logic, weapon constants, equipment, and ReGameDLL extensions for GoldSrc.rs"
@@ -19,7 +19,10 @@ members = [
 resolver = "3"
 
 [dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
 
 [dev-dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.16.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
+
+
+
