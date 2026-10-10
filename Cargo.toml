@@ -24,16 +24,5 @@ goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = 
 [dev-dependencies]
 goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
 
-[patch."https://github.com/goldsrc-rs/goldsrc-sdk.git"]
-goldsrc = { path = "../goldsrc-sdk-core/goldsrc" }
-goldsrc-api = { path = "../goldsrc-sdk-core/goldsrc-api" }
-goldsrc-macros = { path = "../goldsrc-sdk-core/goldsrc-macros" }
-goldsrc-sys = { path = "../goldsrc-sdk-core/goldsrc-sys" }
-goldsrc-spi = { path = "../goldsrc-sdk-core/goldsrc-spi" }
-
-[patch."https://github.com/ulquiorracode/stitch-rs.git"]
-stitch-core = { path = "../../stitch-rs/crates/stitch-core" }
-stitch-macros = { path = "../../stitch-rs/crates/stitch-macros" }
-stitch-rs = { path = "../../stitch-rs" }
 
 
