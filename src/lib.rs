@@ -1,5 +1,6 @@
 //! Counter-Strike 1.6 game domain logic, weapon constants, equipment, and ReGameDLL extensions.
 
+pub mod features;
 pub mod player;
 pub mod rules;
 pub mod team;

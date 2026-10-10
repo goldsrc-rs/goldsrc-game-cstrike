@@ -1,6 +1,6 @@
 [package]
 name = "goldsrc-game-cstrike"
-version = "0.16.0"
+version = "0.20.0"
 edition = "2024"
 authors = ["GoldSrc.rs Team"]
 description = "Counter-Strike 1.6 game domain logic, weapon constants, equipment, and ReGameDLL extensions for GoldSrc.rs"
@@ -19,14 +19,21 @@ members = [
 resolver = "3"
 
 [dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.17.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
 
 [dev-dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev", version = "0.17.0" }
+goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
 
-[patch."https://github.com/goldsrc-rs/goldsrc-rs.git"]
-goldsrc = { path = "../goldsrc-rs/framework/goldsrc" }
-goldsrc-api = { path = "../goldsrc-rs/core/goldsrc-api" }
-goldsrc-macros = { path = "../goldsrc-rs/framework/goldsrc-macros" }
-goldsrc-sys = { path = "../goldsrc-rs/core/goldsrc-sys" }
+[patch."https://github.com/goldsrc-rs/goldsrc-sdk.git"]
+goldsrc = { path = "../goldsrc-sdk-core/goldsrc" }
+goldsrc-api = { path = "../goldsrc-sdk-core/goldsrc-api" }
+goldsrc-macros = { path = "../goldsrc-sdk-core/goldsrc-macros" }
+goldsrc-sys = { path = "../goldsrc-sdk-core/goldsrc-sys" }
+goldsrc-spi = { path = "../goldsrc-sdk-core/goldsrc-spi" }
+
+[patch."https://github.com/ulquiorracode/stitch-rs.git"]
+stitch-core = { path = "../../stitch-rs/crates/stitch-core" }
+stitch-macros = { path = "../../stitch-rs/crates/stitch-macros" }
+stitch-rs = { path = "../../stitch-rs" }
+
 

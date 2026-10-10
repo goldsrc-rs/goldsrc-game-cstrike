@@ -24,7 +24,10 @@ impl VipMenu {
         description = "Opens interactive VIP equipment menu",
         usage = "vipmenu <player_index>"
     )]
-    fn handle_menu(player: Alive<Player>) {
+    fn handle_menu(player: Player) {
+        if !player.is_alive() {
+            return;
+        }
         // Send a welcoming DHUD notice
         let notice = HudMessage::builder("[VIP CLUB] Добро пожаловать в VIP Меню!")
             .dhud()

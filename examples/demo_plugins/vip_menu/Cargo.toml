@@ -11,5 +11,5 @@ crate-type = ["cdylib"]
 doctest = false
 
 [dependencies]
-goldsrc = { git = "https://github.com/goldsrc-rs/goldsrc-rs.git", branch = "dev" }
+goldsrc = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev" }
 goldsrc-game-cstrike = { path = "../../.." }
