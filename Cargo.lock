@@ -44,6 +44,7 @@ checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 [[package]]
 name = "goldsrc"
 version = "0.20.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-sdk.git?branch=dev#d49ea303f535c7a6997ff459d8290fbcf07e217d"
 dependencies = [
  "crossbeam-channel",
  "goldsrc-api",
@@ -55,6 +56,7 @@ dependencies = [
 [[package]]
 name = "goldsrc-api"
 version = "0.20.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-sdk.git?branch=dev#d49ea303f535c7a6997ff459d8290fbcf07e217d"
 dependencies = [
  "goldsrc-spi",
  "log",
@@ -64,15 +66,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "goldsrc-game-cstrike"
-version = "0.20.0"
-dependencies = [
- "goldsrc-api",
-]
-
-[[package]]
 name = "goldsrc-macros"
 version = "0.20.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-sdk.git?branch=dev#d49ea303f535c7a6997ff459d8290fbcf07e217d"
 dependencies = [
  "goldsrc-api",
  "proc-macro2",
@@ -81,8 +77,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "goldsrc-sdk-cstrike"
+version = "0.20.0"
+dependencies = [
+ "goldsrc-api",
+]
+
+[[package]]
 name = "goldsrc-spi"
 version = "0.20.0"
+source = "git+https://github.com/goldsrc-rs/goldsrc-sdk.git?branch=dev#d49ea303f535c7a6997ff459d8290fbcf07e217d"
 dependencies = [
  "serde",
  "stitch-core",
@@ -246,10 +250,12 @@ dependencies = [
 [[package]]
 name = "stitch-core"
 version = "0.3.0"
+source = "git+https://github.com/ulquiorracode/stitch-rs.git?branch=main#ad40426668fe6b243bc180d7cf3bfadca74aef02"
 
 [[package]]
 name = "stitch-macros"
 version = "0.3.0"
+source = "git+https://github.com/ulquiorracode/stitch-rs.git?branch=main#ad40426668fe6b243bc180d7cf3bfadca74aef02"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -328,7 +334,7 @@ name = "vip_menu"
 version = "0.16.0"
 dependencies = [
  "goldsrc",
- "goldsrc-game-cstrike",
+ "goldsrc-sdk-cstrike",
 ]
 
 [[package]]
@@ -467,11 +473,3 @@ name = "zmij"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
-
-[[patch.unused]]
-name = "stitch-rs"
-version = "0.3.0"
-
-[[patch.unused]]
-name = "goldsrc-sys"
-version = "0.20.0"

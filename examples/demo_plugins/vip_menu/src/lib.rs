@@ -1,5 +1,5 @@
 use goldsrc::prelude::*;
-use goldsrc_game_cstrike::{CsPlayerExt, CsTeam, CsWeapon};
+use goldsrc_sdk_cstrike::{CsPlayerExt, CsTeam, CsWeapon};
 
 pub struct VipMenu;
 
@@ -8,7 +8,7 @@ pub struct VipMenu;
     version = "0.16.0",
     author = "GoldSrc.rs Team",
     description = "Interactive CS 1.6 VIP multi-page equipment menu and weapon dispensary",
-    url = "https://github.com/goldsrc-rs/goldsrc-game-cstrike"
+    url = "https://github.com/goldsrc-rs/goldsrc-sdk-cstrike"
 )]
 impl VipMenu {
     #[on_load]

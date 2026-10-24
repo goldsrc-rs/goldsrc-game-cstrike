@@ -1,12 +1,12 @@
 [package]
-name = "goldsrc-game-cstrike"
+name = "goldsrc-sdk-cstrike"
 version = "0.20.0"
 edition = "2024"
 authors = ["GoldSrc.rs Team"]
 description = "Counter-Strike 1.6 game domain logic, weapon constants, equipment, and ReGameDLL extensions for GoldSrc.rs"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/goldsrc-rs/goldsrc-game-cstrike"
-homepage = "https://github.com/goldsrc-rs/goldsrc-game-cstrike"
+repository = "https://github.com/goldsrc-rs/goldsrc-sdk-cstrike"
+homepage = "https://github.com/goldsrc-rs/goldsrc-sdk-cstrike"
 readme = "README.md"
 keywords = ["goldsrc", "counter-strike", "cstrike", "hlsdk", "regamedll"]
 categories = ["game-development", "api-bindings"]
