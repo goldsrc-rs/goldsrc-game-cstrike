@@ -1,6 +1,6 @@
-# goldsrc-game-cstrike
+# goldsrc-sdk-cstrike
 
-[![CI](https://github.com/goldsrc-rs/goldsrc-game-cstrike/actions/workflows/ci.yml/badge.svg)](https://github.com/goldsrc-rs/goldsrc-game-cstrike/actions)
+[![CI](https://github.com/goldsrc-rs/goldsrc-sdk-cstrike/actions/workflows/ci.yml/badge.svg)](https://github.com/goldsrc-rs/goldsrc-sdk-cstrike/actions)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/rust-2024%20edition-orange.svg)](https://www.rust-lang.org/)
 
@@ -15,18 +15,18 @@ Counter-Strike 1.6 game domain crate, weapon constants, equipment, and ReGameDLL
 
 ## Usage
 
-Add `goldsrc-game-cstrike` to your `Cargo.toml`:
+Add `goldsrc-sdk-cstrike` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-goldsrc-game-cstrike = { git = "https://github.com/goldsrc-rs/goldsrc-game-cstrike.git", branch = "dev" }
+goldsrc-sdk-cstrike = { git = "https://github.com/goldsrc-rs/goldsrc-sdk-cstrike.git", branch = "dev" }
 ```
 
 ### Example
 
 ```rust
 use goldsrc::prelude::*;
-use goldsrc_game_cstrike::{CsPlayerExt, CsWeapon};
+use goldsrc_sdk_cstrike::{CsPlayerExt, CsWeapon};
 
 pub struct CsVipPlugin;
 
