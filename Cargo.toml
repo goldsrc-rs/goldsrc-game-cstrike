@@ -20,9 +20,3 @@ resolver = "3"
 
 [dependencies]
 goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
-
-[dev-dependencies]
-goldsrc-api = { git = "https://github.com/goldsrc-rs/goldsrc-sdk.git", branch = "dev", version = "0.20.0" }
-
-
-
