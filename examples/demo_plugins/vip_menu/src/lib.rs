@@ -5,7 +5,7 @@ pub struct VipMenu;
 
 #[plugin(
     name = "vip_menu",
-    version = "0.16.0",
+    version = "0.20.0",
     author = "GoldSrc.rs Team",
     description = "Interactive CS 1.6 VIP multi-page equipment menu and weapon dispensary",
     url = "https://github.com/goldsrc-rs/goldsrc-sdk-cstrike"
@@ -13,7 +13,7 @@ pub struct VipMenu;
 impl VipMenu {
     #[on_load]
     fn init() {
-        log_info!("[VIP Menu] Interactive CS 1.6 VIP Menu Plugin v0.16.0 loaded successfully.");
+        log_info!("[VIP Menu] Interactive CS 1.6 VIP Menu Plugin v0.20.0 loaded successfully.");
     }
 
     /// Opens interactive VIP menu (e.g. `vipmenu 1` or chat `/vip`).
@@ -113,5 +113,18 @@ impl VipMenu {
             player.print_center("[VIP] Здоровье восстановлено (+50 HP)");
             player.print_color("^4[VIP]^1 Вы восстановили здоровье!");
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use goldsrc::bindings::Guest;
+
+    #[test]
+    fn test_vip_menu_metadata() {
+        let meta = <VipMenu as Guest>::get_metadata();
+        assert!(meta.contains("name = \"vip_menu\""));
+        assert!(meta.contains("version = \"0.20.0\""));
     }
 }
